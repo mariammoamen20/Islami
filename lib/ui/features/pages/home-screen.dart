@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami/ui/features/pages/hadeth_screen.dart';
+import 'package:islami/ui/features/pages/quran_screen.dart';
+import 'package:islami/ui/features/pages/radio_screen.dart';
+import 'package:islami/ui/features/pages/sebha_screen.dart';
 import 'package:islami/ui/my_colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
+  List<Widget>tabs = const[QuranScreen(),HadethScreen(),SebhaScreen(),RadioScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +74,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     label: 'Radio'),
               ],
             ),
-          )),
+          ),
+         body: tabs[selectedIndex],
+      ),
     );
   }
+
 }
