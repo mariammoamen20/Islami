@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami/ui/home/hadeth/widgets/hadeth_name_widget.dart';
 import 'package:islami/ui/my_theme.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../providers/settings_provider.dart';
 
@@ -14,60 +15,63 @@ class HadethScreen extends StatefulWidget {
 }
 
 class _HadethScreenState extends State<HadethScreen> {
-  List<String> hadethName = [
-    "الحديث الاول",
-  "الحديث الثاني",
-  "الحديث الثالث",
-  "الحديث الرابع",
-  "الحديث الخامس",
- " الحديث السادس",
-  "الحديث السابع",
- " الحديث الثامن",
- " الحديث التاسع",
-  "الحديث العاشر",
-"  الحديث الحادي عشر",
-  "الحديث الثاني عشر",
-  "الحديث الثالث عشر",
-  "الحديث الرايع عشر",
-  "الحديث الخامس عشر",
-  "الحديث السادس عشر",
- " الحديث السابع عشر",
-  "الحديث الثامن عشر",
-  "الحديث التاسع عشر",
- " الحديث العشرون",
- "الحديث الحادي وعشرون",
-  "الحديث الثاني والعشرون",
-"الحديث الثالث والعشرون",
-  "الحديث الرابع والعشرون",
-  "الحديث الخامس والعشرون",
-  "الحد يث السادس والعشرون",
-  "الحد يث السابع والعشرون",
-  "الحد يث الثامن والعشرون",
- " الحد يث التاسع والعشرون",
-  "الحديث الثلا ثــون",
-  "الحديث الحادي والثلاثون",
-  "الحديث الثاني والثلاثون",
-  "الحديث الثالث والثلاثون",
-  "الحديث الرابع والثلاثون",
-  "الحديث الخامس والثلاثون",
-  "الحديث السادس والثلاثون",
- " الحديث السابع والثلاثون",
-  "الحديث الثامن والثلاثون",
- " الحديث الاربعون",
-  "الحد يث الحادي والأربعون",
-  "الحد يث الثاني والأربعـون",
- " الحد يث الثالث والأربعون",
-  "الحديث الرابع والأربعون",
-  "الـحديث الخامس والأربعون",
-  "الحديث السادس والأربعون",
-  "الحديث السابع والأربعون",
-  "الـحديث الثامن والأربعون",
-  "الحديث التاسع والأربعون",
-  "الحديث الخمسون",
-  ];
+
 
   @override
   Widget build(BuildContext context) {
+    List<String> hadethName = [
+      "${AppLocalizations.of(context)?.hadith_1}",
+      "${AppLocalizations.of(context)?.hadith_2}",
+      "${AppLocalizations.of(context)?.hadith_3}",
+      "${AppLocalizations.of(context)?.hadith_4}",
+      "${AppLocalizations.of(context)?.hadith_5}",
+      "${AppLocalizations.of(context)?.hadith_6}",
+      "${AppLocalizations.of(context)?.hadith_7}",
+      "${AppLocalizations.of(context)?.hadith_8}",
+      "${AppLocalizations.of(context)?.hadith_9}",
+      "${AppLocalizations.of(context)?.hadith_10}",
+      "${AppLocalizations.of(context)?.hadith_11}",
+      "${AppLocalizations.of(context)?.hadith_12}",
+      "${AppLocalizations.of(context)?.hadith_13}",
+      "${AppLocalizations.of(context)?.hadith_14}",
+      "${AppLocalizations.of(context)?.hadith_15}",
+      "${AppLocalizations.of(context)?.hadith_16}",
+      "${AppLocalizations.of(context)?.hadith_17}",
+      "${AppLocalizations.of(context)?.hadith_18}",
+      "${AppLocalizations.of(context)?.hadith_19}",
+      "${AppLocalizations.of(context)?.hadith_20}",
+      "${AppLocalizations.of(context)?.hadith_21}",
+      "${AppLocalizations.of(context)?.hadith_22}",
+      "${AppLocalizations.of(context)?.hadith_23}",
+      "${AppLocalizations.of(context)?.hadith_24}",
+      "${AppLocalizations.of(context)?.hadith_25}",
+      "${AppLocalizations.of(context)?.hadith_26}",
+      "${AppLocalizations.of(context)?.hadith_27}",
+      "${AppLocalizations.of(context)?.hadith_28}",
+      "${AppLocalizations.of(context)?.hadith_29}",
+      "${AppLocalizations.of(context)?.hadith_30}",
+      "${AppLocalizations.of(context)?.hadith_31}",
+      "${AppLocalizations.of(context)?.hadith_32}",
+      "${AppLocalizations.of(context)?.hadith_33}",
+      "${AppLocalizations.of(context)?.hadith_34}",
+      "${AppLocalizations.of(context)?.hadith_35}",
+      "${AppLocalizations.of(context)?.hadith_36}",
+      "${AppLocalizations.of(context)?.hadith_37}",
+      "${AppLocalizations.of(context)?.hadith_38}",
+      "${AppLocalizations.of(context)?.hadith_39}",
+      "${AppLocalizations.of(context)?.hadith_40}",
+      "${AppLocalizations.of(context)?.hadith_41}",
+      "${AppLocalizations.of(context)?.hadith_42}",
+      "${AppLocalizations.of(context)?.hadith_43}",
+      "${AppLocalizations.of(context)?.hadith_44}",
+      "${AppLocalizations.of(context)?.hadith_45}",
+      "${AppLocalizations.of(context)?.hadith_46}",
+      "${AppLocalizations.of(context)?.hadith_47}",
+      "${AppLocalizations.of(context)?.hadith_48}",
+      "${AppLocalizations.of(context)?.hadith_49}",
+      "${AppLocalizations.of(context)?.hadith_50}",
+
+    ];
     var settingsProvider = Provider.of<SettingsProvider>(context);
     //readHadeathFile();
     return Column(
@@ -78,7 +82,7 @@ class _HadethScreenState extends State<HadethScreen> {
           color:settingsProvider.currentTheme == ThemeMode.dark ? MyTheme.yellowColor:MyTheme.goldColor ,
         ),
         Text(
-          'ألاحاديث',
+          '${AppLocalizations.of(context)?.hadith}',
           style: Theme.of(context).textTheme.headline5,
         ),
         Container(

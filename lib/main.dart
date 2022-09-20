@@ -8,6 +8,7 @@ import 'package:islami/ui/home/home-screen.dart';
 import 'package:islami/ui/home/quran/pages/sura_details.dart';
 import 'package:islami/ui/my_theme.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(ChangeNotifierProvider<SettingsProvider>(
@@ -18,12 +19,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  late SettingsProvider settingsProvider;
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    var settingsProvider = Provider.of<SettingsProvider>(context);
+    settingsProvider = Provider.of<SettingsProvider>(context);
+    initSharedPref();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: MyTheme.lightTheme,
@@ -48,5 +50,16 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale(settingsProvider.currentLang),
     );
+  }
+
+  void initSharedPref() async {
+    final prefs = await SharedPreferences.getInstance();
+    String lang = prefs.getString('language') ?? 'en';
+    settingsProvider.changeLang(lang);
+    if (prefs.getString('theme') == ThemeMode.light) {
+      settingsProvider.changeTheme(ThemeMode.light);
+    } else {
+      settingsProvider.changeTheme(ThemeMode.dark);
+    }
   }
 }

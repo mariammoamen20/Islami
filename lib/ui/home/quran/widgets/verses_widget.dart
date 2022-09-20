@@ -25,7 +25,6 @@ class VersesWidget extends StatelessWidget {
          textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
 
-
         ),
       ),
     );

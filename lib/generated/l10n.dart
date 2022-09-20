@@ -49,76 +49,6 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
-
-  /// `Islami`
-  String get app_title {
-    return Intl.message(
-      'Islami',
-      name: 'app_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Quran`
-  String get quran_label {
-    return Intl.message(
-      'Quran',
-      name: 'quran_label',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Hadeth`
-  String get hadeth_label {
-    return Intl.message(
-      'Hadeth',
-      name: 'hadeth_label',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sebha`
-  String get sebha_label {
-    return Intl.message(
-      'Sebha',
-      name: 'sebha_label',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Radio`
-  String get radio_label {
-    return Intl.message(
-      'Radio',
-      name: 'radio_label',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Settings`
-  String get setting_label {
-    return Intl.message(
-      'Settings',
-      name: 'setting_label',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Language`
-  String get language {
-    return Intl.message(
-      'Language',
-      name: 'language',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -127,7 +57,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 
